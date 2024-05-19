@@ -26,16 +26,11 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-  // Carica e visualizza i dati da ciascun file JSON nella cartella "news"
-  fetchNewsData();
-});
-
 
 
 async function loadNews() {
   try {
-    const newsFolderPath = 'news/';
+    const newsFolderPath = '../news';
 
     // Ottieni la lista dei file JSON nella cartella news
     const response = await fetch(newsFolderPath);  //VOGLIO LA LISTA QUI CHATGPT
