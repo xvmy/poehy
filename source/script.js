@@ -9,13 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var gridView = document.querySelector('.grid-view');
   var projectsList = document.querySelector('.project-boxes');
   
-  
-  gridView.addEventListener('click', function () {
-    gridView.classList.add('active');
-    listView.classList.remove('active');
-    projectsList.classList.remove('jsListView');
-    projectsList.classList.add('jsGridView');
-  });
+
   
   document.querySelector('.messages-btn').addEventListener('click', function () {
     document.querySelector('.messages-section').classList.add('show');
