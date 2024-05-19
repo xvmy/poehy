@@ -9,12 +9,6 @@ document.addEventListener('DOMContentLoaded', function () {
   var gridView = document.querySelector('.grid-view');
   var projectsList = document.querySelector('.project-boxes');
   
-  listView.addEventListener('click', function () {
-    gridView.classList.remove('active');
-    listView.classList.add('active');
-    projectsList.classList.remove('jsGridView');
-    projectsList.classList.add('jsListView');
-  });
   
   gridView.addEventListener('click', function () {
     gridView.classList.add('active');
@@ -44,7 +38,7 @@ async function loadNews() {
     const newsFolderPath = 'news/';
 
     // Ottieni la lista dei file JSON nella cartella news
-    const response = await fetch(newsFolderPath);
+    const response = await fetch(newsFolderPath);  //VOGLIO LA LISTA QUI CHATGPT
     const fileList = await response.text();
 
     // Estrai i nomi dei file JSON dalla lista
