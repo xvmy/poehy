@@ -1,42 +1,3 @@
-document.addEventListener('DOMContentLoaded', function () {
-  var modeSwitch = document.querySelector('.mode-switch');
-
-  modeSwitch.addEventListener('click', function () {                     document.documentElement.classList.toggle('dark');
-    modeSwitch.classList.toggle('active');
-  });
-  
-  var listView = document.querySelector('.list-view');
-  var gridView = document.querySelector('.grid-view');
-  var projectsList = document.querySelector('.project-boxes');
-  
-  listView.addEventListener('click', function () {
-    gridView.classList.remove('active');
-    listView.classList.add('active');
-    projectsList.classList.remove('jsGridView');
-    projectsList.classList.add('jsListView');
-  });
-  
-  gridView.addEventListener('click', function () {
-    gridView.classList.add('active');
-    listView.classList.remove('active');
-    projectsList.classList.remove('jsListView');
-    projectsList.classList.add('jsGridView');
-  });
-  
-  document.querySelector('.messages-btn').addEventListener('click', function () {
-    document.querySelector('.messages-section').classList.add('show');
-  });
-  
-  document.querySelector('.messages-close').addEventListener('click', function() {
-    document.querySelector('.messages-section').classList.remove('show');
-  });
-});
-
-document.addEventListener("DOMContentLoaded", function() {
-  // Carica e visualizza i dati da ciascun file JSON nella cartella "news"
-  fetchNewsData();
-});
-
 
 
 async function loadNews() {
@@ -52,12 +13,17 @@ async function loadNews() {
 
 
 
-    // Ordina i nomi dei file in base al numero più grande
-    fileNames = fileNames.sort((a, b) => {
-      const numA = parseInt(a.match(/\d+/)[0]);
-      const numB = parseInt(b.match(/\d+/)[0]);
-      return numB - numA;
-    });
+    // Verifica se fileNames è null o vuoto
+    if (fileNames && fileNames.length > 0) {
+      // Ordina i nomi dei file in base al numero più grande
+      fileNames = fileNames.sort((a, b) => {
+        const numA = parseInt(a.match(/\d+/)[0]);
+        const numB = parseInt(b.match(/\d+/)[0]);
+        return numB - numA;
+      });
+    } else {
+      console.log('Nessun file JSON trovato nella cartella news.');
+    }
 
     // Contatore per limitare il numero di notizie aggiunte
     let newsCount = 0;
