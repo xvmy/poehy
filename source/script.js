@@ -1,11 +1,11 @@
 
-
+/*
 async function loadNews() {
   try {
     const newsFolderPath = 'news/';
 
     // Ottieni la lista dei file JSON nella cartella news
-    const response = await fetch(newsFolderPath);  //VOGLIO LA LISTA QUI CHATGPT
+    const response = await fetch(newsFolderPath);  
     const fileList = await response.text();
 
     // Estrai i nomi dei file JSON dalla lista
@@ -57,7 +57,53 @@ async function loadNews() {
   } catch (error) {
     console.error('Si è verificato un errore nel caricamento delle notizie:', error);
   }
+}*/
+async function loadNews() {
+  try {
+    const newsFolderPath = 'news/';
+
+    // Lista dei nomi dei file JSON
+    const fileNames = [
+      'news1.json',
+      'news4.json',
+      'news3.json',
+      // Aggiungi gli altri nomi dei file qui
+    ];
+
+    // Contatore per limitare il numero di notizie aggiunte
+    let newsCount = 0;
+
+    // Set per tenere traccia dei titoli delle notizie già aggiunte
+    const addedTitles = new Set();
+
+    // Per ogni nome di file nella lista
+    for (const fileName of fileNames) {
+      if (newsCount >= 10) break; // Limita il numero di notizie a 10
+
+      // Ottieni il percorso completo del file JSON
+      const filePath = `${newsFolderPath}${fileName}`;
+
+      // Carica il contenuto del file JSON
+      const fileResponse = await fetch(filePath);
+      const jsonData = await fileResponse.json();
+
+      // Verifica se il titolo della notizia è già stato aggiunto
+      if (!addedTitles.has(jsonData.title)) {
+        // Aggiungi le notizie all'HTML
+        addNewsToHTML(jsonData);
+        addedTitles.add(jsonData.title); // Aggiungi il titolo alla lista delle notizie aggiunte
+        newsCount++; // Incrementa il contatore delle notizie aggiunte
+      }
+    }
+
+    if (fileNames.length === 0) {
+      console.log('Nessun file JSON trovato nella cartella news.');
+    }
+  } catch (error) {
+    console.error('Si è verificato un errore nel caricamento delle notizie:', error);
+  }
 }
+
 
 function addNewsToHTML(newsData) {
   // Creare gli elementi HTML e popolarli con i dati delle notizie
