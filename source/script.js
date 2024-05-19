@@ -34,14 +34,6 @@ async function loadNews() {
     let fileNames = fileList.match(/news\d+\.json/g);
 
 
-
-    // Ordina i nomi dei file in base al numero più grande
-    fileNames = fileNames.sort((a, b) => {
-      const numA = parseInt(a.match(/\d+/)[0]);
-      const numB = parseInt(b.match(/\d+/)[0]);
-      return numB - numA;
-    });
-
     // Contatore per limitare il numero di notizie aggiunte
     let newsCount = 0;
 
