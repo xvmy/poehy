@@ -224,11 +224,6 @@ a {
   --message-btn: rgba(195, 207, 244, 0.1);
 }
 
-html, body {
-  width: 100%;
-  height: 100vh;
-  margin: 0;
-}
 
 body {
   font-family: "DM Sans", sans-serif;
@@ -880,7 +875,7 @@ button, a {
   display: none;
 }
 
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 1200px) {
   .project-boxes.jsGridView .project-box-wrapper {
     width: 100%;
   }
@@ -898,7 +893,7 @@ button, a {
     margin-right: 0;
   }
 }
-@media screen and (max-width: 880px) {
+@media screen and (max-width: 1200px) {
   .messages-section {
     transform: translateX(100%);
     position: absolute;
@@ -916,7 +911,7 @@ button, a {
     display: flex;
   }
 }
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 1200px) {
   .app-name {
     margin-left: 20px;
     font-size: 24px;
@@ -943,7 +938,7 @@ button, a {
     margin-left: 4px;
   }
 }
-@media screen and (max-width: 520px) {
+@media screen and (max-width: 1200px) {
   .projects-section {
     overflow: auto;
   }
