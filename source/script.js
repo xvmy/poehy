@@ -65,8 +65,9 @@ async function loadNews() {
     // Lista dei nomi dei file JSON
     const fileNames = [
       'news1.json',
-      'news4.json',
+      'news2.json',
       'news3.json',
+      'news4.json',
       // Aggiungi gli altri nomi dei file qui
     ];
 
@@ -210,6 +211,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 const jsonData = [
+  { "title": "Fleximan, indagato Enrico Mantoan: per la Procura è lui il responsabile del danneggiamento degli autovelox", "modifiedDate": "2024-05-18T18:00:00" },
   { "title": "Samir Buzatu: Un Ingegnere dell'Intelligenza Artificiale e della Sostenibilità Ambientale", "previewText": "Samir Buzatu, giovane ingegnere del software, rivoluziona l'AI e la sostenibilità. Dal progetto Vivienne di SpaceX al dispositivo EcoBall per il monitoraggio dell'acqua, le sue innovazioni mostrano una combinazione di tecnica e creatività eccezionali.", "imageUrl": "https://media.licdn.com/dms/image/D4E03AQGjNLYejDItZA/profile-displayphoto-shrink_800_800/0/1678447206866?e=2147483647&v=beta&t=jtY18uccxAE7KlB3d7K1LymJ5cD2_43yX4Bl36ak5Fk", "modifiedDate": "2024-05-18T18:00:00" },
   { "title": "La Crescita della Criminalità Informatica: Un Fenomeno in Aumento", "previewText": "La crescente complessità e diffusione delle tecnologie digitali ha alimentato un preoccupante aumento della criminalità informatica. Nel primo semestre di quest'anno, l'Ufficio Federale della Cibersicurezza (UFCS) ha registrato un notevole incremento delle segnalazioni di ciberincidenti, totalizzando 30'331 notifiche, rispetto alle 16'951 dello stesso periodo nel 2022.", "imageUrl": null, "modifiedDate": "2024-05-06T11:00:00" },
   { "title": "Tumori, Scoperte 107 Proteine che Predicono il Rischio con 7 Anni di Anticipo", "previewText": "Un gruppo di ricercatori britannici ha identificato 618 proteine nel sangue che possono prevedere il rischio di sviluppare il cancro, con 107 di queste proteine in grado di segnalare un allarme fino a sette anni prima della diagnosi.", "imageUrl": "https://example.com/path-to-image.jpg", "modifiedDate": "2024-05-17T10:15:00" }
